@@ -8,5 +8,9 @@ object ResourceExt {
       .getLines()
       .map(fn)
       .toList
+
+    def reduceLines[T](fn: List[String] => T): T = fn(Source.fromResource(file)
+      .getLines()
+      .toList)
   }
 }
